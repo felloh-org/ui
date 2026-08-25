@@ -1,0 +1,12 @@
+import * as React from 'react';
+import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
+import { cn } from '../utils/cn';
+const NavigationMenu = NavigationMenuPrimitive.Root;
+const NavigationMenuList = React.forwardRef<React.ElementRef<typeof NavigationMenuPrimitive.List>, React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.List>>(({ className, ...props }, ref) => <NavigationMenuPrimitive.List ref={ref} className={cn('group flex flex-1 list-none items-center justify-center space-x-1', className)} {...props} />);
+NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
+const NavigationMenuItem = NavigationMenuPrimitive.Item;
+const NavigationMenuTrigger = React.forwardRef<React.ElementRef<typeof NavigationMenuPrimitive.Trigger>, React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger>>(({ className, children, ...props }, ref) => <NavigationMenuPrimitive.Trigger ref={ref} className={cn('group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium hover:bg-black/5', className)} {...props}>{children}</NavigationMenuPrimitive.Trigger>);
+NavigationMenuTrigger.displayName = NavigationMenuPrimitive.Trigger.displayName;
+const NavigationMenuContent = React.forwardRef<React.ElementRef<typeof NavigationMenuPrimitive.Content>, React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Content>>(({ className, ...props }, ref) => <NavigationMenuPrimitive.Content ref={ref} className={cn('left-0 top-0 w-full', className)} {...props} />);
+NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName;
+export { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent };

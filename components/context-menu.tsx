@@ -1,0 +1,10 @@
+import * as React from 'react';
+import * as ContextMenuPrimitive from '@radix-ui/react-context-menu';
+import { cn } from '../utils/cn';
+const ContextMenu = ContextMenuPrimitive.Root;
+const ContextMenuTrigger = ContextMenuPrimitive.Trigger;
+const ContextMenuContent = React.forwardRef<React.ElementRef<typeof ContextMenuPrimitive.Content>, React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Content>>(({ className, ...props }, ref) => <ContextMenuPrimitive.Portal><ContextMenuPrimitive.Content ref={ref} className={cn('z-50 min-w-[8rem] rounded-md border border-black/10 bg-white p-1 shadow', className)} {...props} /></ContextMenuPrimitive.Portal>);
+ContextMenuContent.displayName = ContextMenuPrimitive.Content.displayName;
+const ContextMenuItem = React.forwardRef<React.ElementRef<typeof ContextMenuPrimitive.Item>, React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Item>>(({ className, inset, ...props }: any, ref) => <ContextMenuPrimitive.Item ref={ref} className={cn('relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm hover:bg-black/5', className)} {...props} />);
+ContextMenuItem.displayName = ContextMenuPrimitive.Item.displayName;
+export { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem };

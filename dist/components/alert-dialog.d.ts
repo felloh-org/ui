@@ -1,0 +1,14 @@
+import * as React from 'react';
+import * as AlertDialogPrimitive from '@radix-ui/react-dialog';
+declare const AlertDialog: React.FC<AlertDialogPrimitive.DialogProps>;
+declare const AlertDialogTrigger: React.ForwardRefExoticComponent<AlertDialogPrimitive.DialogTriggerProps & React.RefAttributes<HTMLButtonElement>>;
+declare const AlertDialogPortal: React.FC<AlertDialogPrimitive.DialogPortalProps>;
+declare const AlertDialogOverlay: React.ForwardRefExoticComponent<Omit<AlertDialogPrimitive.DialogOverlayProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
+declare const AlertDialogContent: React.ForwardRefExoticComponent<Omit<AlertDialogPrimitive.DialogContentProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
+declare const AlertDialogHeader: ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => React.JSX.Element;
+declare const AlertDialogFooter: ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => React.JSX.Element;
+declare const AlertDialogTitle: React.ForwardRefExoticComponent<Omit<AlertDialogPrimitive.DialogTitleProps & React.RefAttributes<HTMLHeadingElement>, "ref"> & React.RefAttributes<HTMLHeadingElement>>;
+declare const AlertDialogDescription: React.ForwardRefExoticComponent<Omit<AlertDialogPrimitive.DialogDescriptionProps & React.RefAttributes<HTMLParagraphElement>, "ref"> & React.RefAttributes<HTMLParagraphElement>>;
+declare const AlertDialogAction: React.ForwardRefExoticComponent<Omit<AlertDialogPrimitive.DialogCloseProps & React.RefAttributes<HTMLButtonElement>, "ref"> & React.RefAttributes<HTMLButtonElement>>;
+declare const AlertDialogCancel: React.ForwardRefExoticComponent<Omit<AlertDialogPrimitive.DialogCloseProps & React.RefAttributes<HTMLButtonElement>, "ref"> & React.RefAttributes<HTMLButtonElement>>;
+export { AlertDialog, AlertDialogPortal, AlertDialogOverlay, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogFooter, AlertDialogTitle, AlertDialogDescription, AlertDialogAction, AlertDialogCancel };

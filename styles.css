@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+/* Explicit sources so the library build (vite.lib.config.ts) always emits every
+   utility used by components — auto-detection is unreliable in lib mode. */
+@source "./components";
+@source "./index.ts";
+@source "./src";
+
+@theme {
+  /* Headroom Color Palette */
+  --color-headroom-beige: #F4F4F4;
+  --color-headroom-text: #161616;
+  --color-headroom-purple: #D4C4FA;
+  --color-headroom-orange: #FF5630;
+  --color-headroom-mint: #D0E6D4;
+  --color-headroom-gray: #E6E4E1;
+
+  /* Gray Scale */
+  --color-carbon-gray-100: #161616;
+  --color-carbon-gray-90: #262626;
+  --color-carbon-gray-80: #393939;
+  --color-carbon-gray-70: #525252;
+  --color-carbon-gray-60: #6f6f6f;
+  --color-carbon-gray-50: #8d8d8d;
+  --color-carbon-gray-40: #a8a8a8;
+  --color-carbon-gray-30: #c6c6c6;
+  --color-carbon-gray-20: #e0e0e0;
+  --color-carbon-gray-10: #f4f4f4;
+
+  /* Blue Scale (Primary) */
+  --color-carbon-blue-100: #001141;
+  --color-carbon-blue-90: #001d6c;
+  --color-carbon-blue-80: #002d9c;
+  --color-carbon-blue-70: #0043ce;
+  --color-carbon-blue-60: #0f62fe;
+  --color-carbon-blue-50: #4589ff;
+  --color-carbon-blue-40: #78a9ff;
+  --color-carbon-blue-30: #a6c8ff;
+  --color-carbon-blue-20: #d0e2ff;
+  --color-carbon-blue-10: #edf5ff;
+
+  /* Support Colors */
+  --color-carbon-red-60: #da1e28;
+  --color-carbon-red-50: #fa4d56;
+  --color-carbon-red-40: #ff8389;
+  --color-carbon-red-10: #fff1f1;
+  --color-carbon-green-60: #198038;
+  --color-carbon-green-50: #24a148;
+  --color-carbon-green-40: #42be65;
+  --color-carbon-green-10: #defbe6;
+  --color-carbon-yellow-30: #f1c21b;
+  --color-carbon-yellow-20: #fddc69;
+  --color-carbon-yellow-10: #fcf4d6;
+  --color-carbon-purple-60: #8a3ffc;
+  --color-carbon-purple-50: #a56eff;
+  --color-carbon-purple-10: #f6f2ff;
+  --color-carbon-teal-60: #007d79;
+  --color-carbon-teal-50: #009d9a;
+  --color-carbon-teal-10: #d9fbfb;
+
+  /* Base Colors - Headroom Theme */
+  --color-background: #F4F4F4;
+  --color-foreground: #161616;
+  --color-card: #ffffff;
+  --color-card-foreground: #161616;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #161616;
+
+  /* Primary - Black for buttons like landing page */
+  --color-primary: #161616;
+  --color-primary-foreground: #ffffff;
+
+  /* Secondary */
+  --color-secondary: #393939;
+  --color-secondary-foreground: #ffffff;
+
+  /* Muted */
+  --color-muted: #E6E4E1;
+  --color-muted-foreground: #525252;
+
+  /* Accent */
+  --color-accent: #D4C4FA;
+  --color-accent-foreground: #161616;
+
+  /* Destructive */
+  --color-destructive: #da1e28;
+  --color-destructive-foreground: #ffffff;
+
+  /* Success */
+  --color-success: #198038;
+  --color-success-foreground: #ffffff;
+
+  /* Warning */
+  --color-warning: #f1c21b;
+  --color-warning-foreground: #161616;
+
+  /* Info */
+  --color-info: #0043ce;
+  --color-info-foreground: #ffffff;
+
+  /* Border & Input */
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-input: #E6E4E1;
+  --color-ring: #161616;
+
+  /* Radius - Minimal radius like landing page */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+  }
+  /* Headroom Typography */
+  h1 {
+    font-size: 3rem; /* 48px */
+    line-height: 1.1;
+    font-weight: 500;
+  }
+  h2 {
+    font-size: 2rem; /* 32px */
+    line-height: 1.2;
+    font-weight: 500;
+  }
+  h3 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.3;
+    font-weight: 500;
+  }
+  h4 {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  h5 {
+    font-size: 1rem; /* 16px */
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  h6 {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  code, pre {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+/* Hide number input spinners */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Carbon-style components */
+@layer components {
+  .carbon-label {
+    @apply text-xs text-[#525252];
+    letter-spacing: 0.32px;
+    line-height: 1.33333;
+  }
+  .carbon-helper-text {
+    @apply text-xs text-[#6f6f6f];
+    letter-spacing: 0.32px;
+    line-height: 1.33333;
+  }
+  .carbon-body-01 {
+    font-size: 0.875rem;
+    line-height: 1.42857;
+    letter-spacing: 0.16px;
+  }
+  .carbon-body-02 {
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+  .carbon-heading-01 {
+    font-size: 0.875rem;
+    line-height: 1.28571;
+    font-weight: 600;
+    letter-spacing: 0.16px;
+  }
+  .carbon-heading-02 {
+    font-size: 1rem;
+    line-height: 1.375;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+  /* Carbon divider */
+  .carbon-divider {
+    @apply border-t border-[#e0e0e0];
+  }
+  /* Carbon field */
+  .carbon-field {
+    @apply bg-[#f4f4f4] border-b-2 border-[#8d8d8d];
+  }
+  .carbon-field:focus {
+    @apply border-[#0f62fe] outline-none;
+  }
+}

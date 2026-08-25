@@ -1,0 +1,12 @@
+import * as React from 'react';
+import * as MenubarPrimitive from '@radix-ui/react-menubar';
+import { cn } from '../utils/cn';
+const Menubar: any = MenubarPrimitive.Root;
+const MenubarMenu: any = MenubarPrimitive.Menu;
+const MenubarTrigger = React.forwardRef<React.ElementRef<typeof MenubarPrimitive.Trigger>, React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Trigger>>(({ className, ...props }, ref) => <MenubarPrimitive.Trigger ref={ref} className={cn('flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm hover:bg-black/5 focus:bg-black/5', className)} {...props} />);
+MenubarTrigger.displayName = MenubarPrimitive.Trigger.displayName;
+const MenubarContent = React.forwardRef<React.ElementRef<typeof MenubarPrimitive.Content>, React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Content>>(({ className, ...props }, ref) => <MenubarPrimitive.Portal><MenubarPrimitive.Content ref={ref} className={cn('z-50 min-w-[12rem] rounded-md border border-black/10 bg-white p-1 shadow', className)} {...props} /></MenubarPrimitive.Portal>);
+MenubarContent.displayName = MenubarPrimitive.Content.displayName;
+const MenubarItem = React.forwardRef<React.ElementRef<typeof MenubarPrimitive.Item>, React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Item>>(({ className, ...props }, ref) => <MenubarPrimitive.Item ref={ref} className={cn('relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm hover:bg-black/5', className)} {...props} />);
+MenubarItem.displayName = MenubarPrimitive.Item.displayName;
+export { Menubar, MenubarMenu, MenubarTrigger, MenubarContent, MenubarItem };

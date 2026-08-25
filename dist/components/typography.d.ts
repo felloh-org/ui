@@ -1,0 +1,10 @@
+import * as React from 'react';
+export declare const H1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => React.JSX.Element;
+export declare const H2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => React.JSX.Element;
+export declare const H3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => React.JSX.Element;
+export declare const P: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => React.JSX.Element;
+export declare const Lead: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => React.JSX.Element;
+export declare const Small: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => React.JSX.Element;
+export declare const Muted: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => React.JSX.Element;
+export declare const Blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLQuoteElement>) => React.JSX.Element;
+export declare const Code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => React.JSX.Element;

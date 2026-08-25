@@ -1,0 +1,11 @@
+import * as React from 'react';
+import { cn } from '../utils/cn';
+export const H1 = ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => <h1 className={cn('text-3xl font-bold tracking-tight text-[#161616]', className)} {...props} />;
+export const H2 = ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => <h2 className={cn('text-2xl font-semibold tracking-tight text-[#161616]', className)} {...props} />;
+export const H3 = ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => <h3 className={cn('text-lg font-semibold text-[#161616]', className)} {...props} />;
+export const P = ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => <p className={cn('text-sm text-[#525252] leading-relaxed', className)} {...props} />;
+export const Lead = ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => <p className={cn('text-lg text-[#525252]', className)} {...props} />;
+export const Small = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => <small className={cn('text-xs text-[#525252]', className)} {...props} />;
+export const Muted = ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => <p className={cn('text-sm text-[#8d8d8d]', className)} {...props} />;
+export const Blockquote = ({ className, ...props }: React.HTMLAttributes<HTMLQuoteElement>) => <blockquote className={cn('border-l-2 border-[#D4C4FA] pl-4 text-sm italic text-[#525252]', className)} {...props} />;
+export const Code = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => <code className={cn('rounded bg-[#F4F4F4] px-1 py-0.5 font-mono text-xs', className)} {...props} />;
